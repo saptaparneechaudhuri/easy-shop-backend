@@ -45,6 +45,8 @@ mongoose
   .catch((err) => console.log(err));
 
 // add a port where the server listens. The callback function is executed when the server runs successfully
-app.listen(3000, () => {
-  console.log("Server running");
+var server = app.listen(process.env.PORT || 3000, () => {
+  console.log(api);
+  let port = server.address().port;
+  console.log("server is running at port " + port);
 });
